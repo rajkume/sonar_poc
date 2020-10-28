@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>ec9e57ba-cfb2-47fb-9935-027b7a861923</Id>
+  <Type>process</Type>
+  <Name>Arcesium_test</Name>
+  <Version>10</Version>
+  <FolderId name="ANATAS PTY LTD/99. SANDPIT/Rajkumar">
+  3568939</FolderId>
+  <AccountId>anatasptyltd-JCNRWO</AccountId>
+  <Properties>
+    <Property>
+      <Name>overrides-enabled</Name>
+      <Value>true</Value>
+    </Property>
+    <Property>
+      <Name>startshape-type</Name>
+      <Value>NOACTION</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="3f5e8a5c-69df-4bf0-9471-ffb14a94a42e"
+    refId="shape6-parameter-0-processproperty"
+    name="VAR Deployment Values" />
+    <Ref compId="0c0a014b-9126-4a65-bf4e-ae2bcb410ce4"
+    refId="shape6-parameter-1-processproperty" name="temp_prop" />
+    <Ref compId="0c0a014b-9126-4a65-bf4e-ae2bcb410ce4"
+    refId="shape6-parameter-2-processproperty" name="temp_prop" />
+  </References>
+  <Description />
+  <Object>
+    <process allowSimultaneous="false" enableUserLog="false"
+    updateRunDates="true" processLogOnErrorOnly="false"
+    workload="general" purgeDataImmediately="false">
+      <shapes>
+        <shape name="shape1" userlabel="" image="start" x="96.0"
+        y="96.0" shapetype="start">
+          <configuration>
+            <noaction />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape1.dragpoint1" toShape="shape2"
+            x="288.0" y="105.0">
+              <linesegment name="shape1.dragpoint1.lineseg1"
+              length="0" orient="horizontal" x="130.0" y="111.0" />
+              <linesegment name="shape1.dragpoint1.lineseg2"
+              length="0" orient="vertical" x="130.0" y="111.0" />
+              <linesegment name="shape1.dragpoint1.lineseg3"
+              length="87" orient="horizontal" x="130.0"
+              y="111.0" />
+              <linesegment name="shape1.dragpoint1.lineseg4"
+              length="0" orient="vertical" x="217.0" y="111.0" />
+              <linesegment name="shape1.dragpoint1.lineseg5"
+              length="71" orient="horizontal" x="217.0"
+              y="111.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape name="shape2" userlabel="call Arcesium"
+        image="dataprocess_icon" x="304.0" y="96.0"
+        shapetype="dataprocess">
+          <configuration>
+            <dataprocess>
+              <step name="Custom Scripting" processtype="12"
+              index="1" key="1">
+                <dataprocessscript language="groovy2">
+                  <script>import java.util.Properties; import
+                  java.io.InputStream; import
+                  deshaw.moss.service.OrganizationService; import
+                  deshaw.moss.model.LegalEntity; import
+                  deshaw.moss.service.light.OrganizationServiceLight;
+                    for( int i = 0; i &lt;
+                  dataContext.getDataCount(); i++ ) { InputStream
+                  is = dataContext.getStream(i); Properties props
+                  = dataContext.getProperties(i);  //Initialize
+                  the organization Service OrganizationService
+                  orgService = new
+                  OrganizationServiceLight("N2Y3NDM5ZDctMDBjMC00OGM5LWJmNGItOTU5NjQ5NzllNjM1","a46f9f751a9000fa5047a6808a7351fb","api-sandbox.arcesium.com");
+                  //Get All Active LEs API List&lt;LegalEntity&gt;
+                  legalEntities =
+                  orgService.getLegalEntities(true); 
+                  dataContext.storeStream(is, props); }</script>
+                </dataprocessscript>
+              </step>
+            </dataprocess>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape2.dragpoint1" toShape="shape6"
+            x="480.0" y="169.0">
+              <linesegment name="shape2.dragpoint1.lineseg1"
+              length="0" orient="horizontal" x="338.0" y="111.0" />
+              <linesegment name="shape2.dragpoint1.lineseg2"
+              length="0" orient="vertical" x="338.0" y="111.0" />
+              <linesegment name="shape2.dragpoint1.lineseg3"
+              length="79" orient="horizontal" x="338.0"
+              y="111.0" />
+              <linesegment name="shape2.dragpoint1.lineseg4"
+              length="64" orient="vertical" x="417.0" y="111.0" />
+              <linesegment name="shape2.dragpoint1.lineseg5"
+              length="63" orient="horizontal" x="417.0"
+              y="175.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape name="shape3" userlabel="" image="stop_icon"
+        x="688.0" y="96.0" shapetype="stop">
+          <configuration>
+            <stop continue="true" />
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape name="shape6" userlabel="" image="notify_icon"
+        x="496.0" y="160.0" shapetype="notify">
+          <configuration>
+            <notify title="" disableEvent="true"
+            enableUserLog="false" perExecution="false">
+              <notifyMessage>{1} {2} {3}</notifyMessage>
+              <notifyMessageLevel>INFO</notifyMessageLevel>
+              <notifyParameters>
+                <parametervalue valueType="definedparameter"
+                key="0">
+                  <definedprocessparameter componentId="3f5e8a5c-69df-4bf0-9471-ffb14a94a42e"
+                  componentName="VAR Deployment Values"
+                  propertyKey="9b57a078-d7ee-4ca7-a238-fe626c2ba67d"
+                  propertyLabel="Packaged Component ID" />
+                </parametervalue>
+                <parametervalue valueType="definedparameter"
+                key="1">
+                  <definedprocessparameter componentId="0c0a014b-9126-4a65-bf4e-ae2bcb410ce4"
+                  componentName="temp_prop"
+                  propertyKey="dc9de050-9143-49f2-83dd-bae09b1ee7db"
+                  propertyLabel="username" />
+                </parametervalue>
+                <parametervalue valueType="definedparameter"
+                key="2">
+                  <definedprocessparameter componentId="0c0a014b-9126-4a65-bf4e-ae2bcb410ce4"
+                  componentName="temp_prop"
+                  propertyKey="a1df2e99-137f-446d-90bc-5c2f24f8d367"
+                  propertyLabel="password" />
+                </parametervalue>
+              </notifyParameters>
+            </notify>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape6.dragpoint1" toShape="shape3"
+            x="672.0" y="105.0">
+              <linesegment name="shape6.dragpoint1.lineseg1"
+              length="0" orient="horizontal" x="530.0" y="175.0" />
+              <linesegment name="shape6.dragpoint1.lineseg2"
+              length="0" orient="vertical" x="530.0" y="175.0" />
+              <linesegment name="shape6.dragpoint1.lineseg3"
+              length="79" orient="horizontal" x="530.0"
+              y="175.0" />
+              <linesegment name="shape6.dragpoint1.lineseg4"
+              length="64" orient="vertical" x="609.0" y="111.0" />
+              <linesegment name="shape6.dragpoint1.lineseg5"
+              length="63" orient="horizontal" x="609.0"
+              y="111.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+      </shapes>
+    </process>
+  </Object>
+  <Overrides>
+    <Connections />
+    <PartnerOverrides />
+    <Properties />
+    <Extensions>
+      <ObjectDefinitions>
+        <unusedProfiles />
+      </ObjectDefinitions>
+      <DataMaps>
+        <unusedMaps />
+      </DataMaps>
+    </Extensions>
+    <CrossReferenceOverrides />
+    <PGPOverrides />
+    <DefinedProcessPropertyOverrides>
+      <OverrideableDefinedProcessPropertyComponent componentId="3f5e8a5c-69df-4bf0-9471-ffb14a94a42e">
+
+        <OverrideableDefinedProcessPropertyValue key="9b57a078-d7ee-4ca7-a238-fe626c2ba67d"
+        name="Packaged Component ID" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="a1a4613d-2629-4401-8e66-4a2d0561dd2a"
+        name="Environment ID" overrideable="true" />
+      </OverrideableDefinedProcessPropertyComponent>
+      <OverrideableDefinedProcessPropertyComponent componentId="0c0a014b-9126-4a65-bf4e-ae2bcb410ce4">
+
+        <OverrideableDefinedProcessPropertyValue key="dc9de050-9143-49f2-83dd-bae09b1ee7db"
+        name="username" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="a1df2e99-137f-446d-90bc-5c2f24f8d367"
+        name="password" overrideable="true" />
+      </OverrideableDefinedProcessPropertyComponent>
+    </DefinedProcessPropertyOverrides>
+  </Overrides>
+</Component>
