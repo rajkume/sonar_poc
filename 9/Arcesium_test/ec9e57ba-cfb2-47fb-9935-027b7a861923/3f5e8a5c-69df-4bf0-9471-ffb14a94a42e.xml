@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>3f5e8a5c-69df-4bf0-9471-ffb14a94a42e</Id>
+  <Type>processproperty</Type>
+  <Name>VAR Deployment Values</Name>
+  <Version>1</Version>
+  <FolderId name="ANATAS PTY LTD/99. SANDPIT/Rajkumar">
+  3568939</FolderId>
+  <AccountId>anatasptyltd-JCNRWO</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <DefinedProcessProperties>
+      <definedProcessProperty key="9b57a078-d7ee-4ca7-a238-fe626c2ba67d">
+
+        <helpText />
+        <label>Packaged Component ID</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="a1a4613d-2629-4401-8e66-4a2d0561dd2a">
+
+        <helpText />
+        <label>Environment ID</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+    </DefinedProcessProperties>
+  </Object>
+</Component>
