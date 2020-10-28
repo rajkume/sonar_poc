@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>0c0a014b-9126-4a65-bf4e-ae2bcb410ce4</Id>
+  <Type>processproperty</Type>
+  <Name>temp_prop</Name>
+  <Version>1</Version>
+  <FolderId name="ANATAS PTY LTD/99. SANDPIT/Rajkumar">
+  3568939</FolderId>
+  <AccountId>anatasptyltd-JCNRWO</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <DefinedProcessProperties>
+      <definedProcessProperty key="dc9de050-9143-49f2-83dd-bae09b1ee7db">
+
+        <helpText />
+        <label>username</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="a1df2e99-137f-446d-90bc-5c2f24f8d367">
+
+        <helpText />
+        <label>password</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+    </DefinedProcessProperties>
+  </Object>
+</Component>
